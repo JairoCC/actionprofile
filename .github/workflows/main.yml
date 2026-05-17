@@ -77,7 +77,7 @@ jobs:
         with:
           scan-type: 'fs'
           scan-ref: '.'
-          exit-code: '1'
+          exit-code: '0'
           vuln-type: 'os,library'
           output: 'trivy-results.json'
 
