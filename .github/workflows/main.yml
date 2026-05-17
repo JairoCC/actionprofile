@@ -13,6 +13,9 @@ on:
   
   # schedule:
   #   - cron: "0 2 * * *" 
+
+permissions:
+  contents: read
   
 jobs:
 
@@ -27,6 +30,16 @@ jobs:
 
       - name: Maven Build
         run: mvn install
+
+      - name: Upload Build Artifact (WAR)
+        uses: actions/upload-artifact@v4
+        with:
+          name: vprofile-app
+          path: target/*.war
+
+      - name: Notify if Builds fails
+        if: failure()
+        run: echo "Buiold job failed! Please check logs"
 
   Testing:
     runs-on: ubuntu-latest
