@@ -75,11 +75,11 @@ jobs:
       - name: Runt Trivy filesystem scan
         uses: aquasecurity/trivy-action@v0.28.0
         with:
-          scan-type: fs
-          scan-ref: .
-          exit-code: 1
-          vuln-type: os,library
-          output: trivy-results.json
+          scan-type: 'fs'
+          scan-ref: '.'
+          exit-code: '1'
+          vuln-type: 'os,library'
+          output: 'trivy-results.json'
 
       - name: Upload trivy scan results as artifacts
         uses: actions/upload-artifact@v4
