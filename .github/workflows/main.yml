@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Code checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Maven Build
         run: mvn install
@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Code checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Run tests on main branch
         run: mvn test
